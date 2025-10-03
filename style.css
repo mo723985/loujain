@@ -97,16 +97,16 @@ card h3 {
   padding:6px;
   border-radius:8px;
   text-align:center;
-  background:#e6ff03de;
+  background:#043be044;
   cursor:pointer;
   user-select:none;
   border:1px solid #e6e9ee;
   font-weight:600;
-  color: #2b8a3e;
+  color: #e100fff4;
 }
 
 .month.paid{
-  background:#8719e2b6;
+  background:#72f110b6;
   border-color:#bde6c4;
   color:var(--accent);
   color: #5f3838;
