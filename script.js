@@ -1,5 +1,21 @@
 // key for localStorage
 const STORAGE_KEY = 'subscribers_db_v1';
+const PASSWORD = "1997"; // الرقم السري
+
+const loginScreen = document.getElementById('loginScreen');
+const appDiv = document.getElementById('app');
+const loginBtn = document.getElementById('loginBtn');
+const passwordInput = document.getElementById('passwordInput');
+const loginError = document.getElementById('loginError');
+
+loginBtn.addEventListener('click', ()=>{
+  if(passwordInput.value === PASSWORD){
+    loginScreen.style.display = 'none';
+    appDiv.style.display = 'block';
+  } else {
+    loginError.style.display = 'block';
+  }
+});
 
 // DOM
 const subscribersContainer = document.getElementById('subscribersContainer');
@@ -360,6 +376,9 @@ function populateGroups(){
     groupFilter.value = current;
   }
 }
+
+
+
 
 
 
