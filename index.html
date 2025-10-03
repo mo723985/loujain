@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>إدارة باقات - المشتركين</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>مدير باقات النت والدقايق</h1>
+    <div class="controls">
+      <input id="searchInput" placeholder="ابحث باسم أو رقم..." />
+      <select id="groupFilter">
+        <option value="all">كل المجموعات</option>
+      </select>
+      <button id="btnAddGroup">أضف مجموعة</button>
+      <button id="btnAddSubscriber">أضف عميل</button>
+      <label class="file-label">
+        استيراد JSON
+        <input id="importJson" type="file" accept=".json" />
+      </label>
+      <button id="exportJson">تصدير JSON</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="subscribersContainer" class="grid"></section>
+  </main>
+
+  <!-- Add / Edit Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="modalTitle">أضف عميل جديد</h2>
+      <form id="subscriberForm">
+        <label>الاسم
+          <input name="name" required />
+        </label>
+        <label>التليفون
+          <input name="phone" required />
+        </label>
+        <label>قيمة النت (جيجا)
+          <input name="gigabytes" type="number" min="0" required/>
+        </label>
+        <label>قيمة الدقايق
+          <input name="minutes" type="number" min="0" required/>
+        </label>
+        <label>السعر الشهري
+          <input name="pricePerMonth" type="number" min="0" required/>
+        </label>
+        <label>المجموعة
+          <select name="group" id="groupSelect"></select>
+        </label>
+        <div class="modal-actions">
+          <button type="submit" id="saveBtn">حفظ</button>
+          <button type="button" id="cancelBtn">إلغاء</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Simple confirm overlay for group add -->
+  <div id="promptModal" class="modal hidden">
+    <div class="modal-content">
+      <h3 id="promptTitle">أدخل اسم المجموعة</h3>
+      <input id="promptInput" />
+      <div class="modal-actions">
+        <button id="promptOk">حفظ</button>
+        <button id="promptCancel">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
