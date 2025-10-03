@@ -6,10 +6,32 @@
   <title>إدارة باقات - المشتركين</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+<div id="loginScreen" class="modal">
+  <div class="modal-content">
+    <h2>تسجيل الدخول</h2>
+    <p>من فضلك أدخل الرقم السري:</p>
+    <input id="passwordInput" type="password" placeholder="••••" />
+    <div class="modal-actions">
+      <button id="loginBtn">دخول</button>
+    </div>
+    <p id="loginError" style="color:red; display:none;">❌ الرقم السري غير صحيح</p>
+  </div>
+</div>
+ <div id="app" style="display:none">
   <header class="topbar">
     <h1>مدير باقات النت والدقايق</h1>
     <div class="controls">
+
+      
+<select id="paymentFilter">
+  <option value="all">الكل</option>
+  <option value="paid">اللي دفع</option>
+  <option value="unpaid">اللي ما دفعش</option>
+</select>
+
+
       <input id="searchInput" placeholder="ابحث باسم أو رقم..." />
       <select id="groupFilter">
         <option value="all">كل المجموعات</option>
@@ -70,7 +92,7 @@
       </div>
     </div>
   </div>
-
+</div>
   <script src="script.js"></script>
 </body>
 </html>
